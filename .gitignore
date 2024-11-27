@@ -1,0 +1,4 @@
+/logs
+/main_database
+/node_modules
+.env
