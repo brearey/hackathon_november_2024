@@ -11,6 +11,12 @@ docker:
 restart:
 	sudo docker restart backend
 
+start:
+	sudo docker compose start
+
+stop:
+	sudo docker compose stop
+
 db_logs:
 	sudo docker logs main_database
 
