@@ -1,7 +1,3 @@
-GCCFLAGS = -Wall -Werror -Wextra -std=c11
-BUILD = ./s21_cat
-
-
 all: docker
 rebuild: clean all
 

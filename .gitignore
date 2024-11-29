@@ -2,3 +2,5 @@
 /main_database
 /node_modules
 .env
+
+/spring-java/target/
