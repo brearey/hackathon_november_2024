@@ -1,11 +1,16 @@
-all: docker
+all: maven build start
 rebuild: clean all
 
-build:
-	sudo bash /home/lorriant/Загрузки/apache-maven-3.9.9-bin/apache-maven-3.9.9/bin/mvn clean package
+maven:
+	sudo bash /home/lorriant/.maven/bin/mvn package && java -jar target/spring-boot-docker-0.0.1-SNAPSHOT.jar
 
-docker: build
-	sudo docker build -t springio/gs-spring-boot-docker .
-	sudo docker run -p 8080:8080 springio/gs-spring-boot-docker
+build:
+	cd target
+	docker build -t spring-boot-docker .
+
+start:
+	sudo docker run -p 8080:8080 -t spring-boot-docker
+
 clean:
-	sudo docker rmi -f springio/gs-spring-boot-docker
+	sudo rm -r target
+	sudo docker rmi -f spring-boot-docker
