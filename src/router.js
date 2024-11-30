@@ -8,7 +8,7 @@ const router = (app) => {
 
 // middleware для логирования HTTP запросов
 function loggerMiddleware(req, res, next) {
-    logger.info(req)
+    logger.info(`${req?.method} ${req?.url}`)
     next()
 }
 
