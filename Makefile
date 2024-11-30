@@ -6,12 +6,16 @@ docker:
 
 restart:
 	sudo docker restart backend
+	sudo docker logs backend
 
 start:
 	sudo docker compose start
 
 stop:
 	sudo docker compose stop
+
+backend_logs:
+	sudo docker logs backend
 
 db_logs:
 	sudo docker logs main_database
